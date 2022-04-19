@@ -10,7 +10,7 @@ import { User } from './user.model'
 export class UserModel {
   constructor(@InjectModel('User') private readonly UserModel: Model<User>) {}
 
-  async create(data){
+  async create(data){    
     const user = new this.UserModel(data)
     try{
       await user.save()
@@ -18,6 +18,8 @@ export class UserModel {
     }
     catch(e){
       debug('app:user:create')(e)
+      console.log(e)
+      throw new Error(e._message)
     }
   }
 
