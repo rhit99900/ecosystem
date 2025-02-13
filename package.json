@@ -2,12 +2,14 @@
   "name": "ecosystem",
   "version": "1.0.0",
   "description": "Personal Life Management App",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && cross-env NODE_ENV=production node dist/app.js",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "build": "swc src -d dist --source-maps --copy-files",
+    "compile": "swc ./src"
   },
   "author": "Rohit Nair",
-  "dependencies": {    
+  "dependencies": {
     "@types/lodash": "^4.14.195",
     "api-query-params": "^5.4.0",
     "archiver": "^7.0.1",
@@ -32,7 +34,7 @@
     "jsonwebtoken": "^8.5.1",
     "libphonenumber-js": "^1.11.4",
     "lodash": "^4.17.21",
-    "mongoose": "^6.5.0",
+    "mongoose": "^8.10.0",
     "morgan": "^1.10.0",
     "puppeteer": "^2.1.1",
     "reflect-metadata": "^0.1.13",
