@@ -13,7 +13,7 @@ class Database {
       this.connection_string = MONGO_CONNECTION_STRING;
       this.init()
         .then(() => {
-          console.info('Successfully connection to Database');        
+          console.info('Successfully connected to Database');
         })
         .catch(e => {
           console.error('Database connection failed');

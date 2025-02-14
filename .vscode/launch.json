@@ -8,7 +8,7 @@
       "type": "node-terminal",
       "request": "launch",
       "name": "Launch Ecosystem",
-      "command": "nvm use 16 && npm run dev",
+      "command": "nvm use 18 && npm run dev",
       "envFile": "${workspaceFolder}/.env"
     }    
   ]
